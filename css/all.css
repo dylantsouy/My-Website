@@ -464,9 +464,35 @@ a {
 }
 .container > .works > .section > .item > .pic > img {
   width: 320px;
-  height: 240px;
-  object-fit: cover;
+  height: 180px;
+  object-fit: contain;
   vertical-align: top;
+  border-radius: 15px;
+}
+.container > .works > .section > .item .btn{
+  display: flex;
+  margin-top: 10px;
+}
+.container > .works > .section > .item .btn >.demo{
+  background: #f33;
+  letter-spacing: 0;
+  color:#fff;
+  padding: 5px 10px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+.container > .works > .section > .item .btn >.demo:hover{
+  opacity: 0.7;
+}
+.container > .works > .section > .item .btn >.code{
+  letter-spacing: 0;
+  background: #aaa;
+  color:#fff;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.container > .works > .section > .item .btn >.code:hover{
+  opacity: 0.7;
 }
 /* --- 遮罩層 --- */
 .container > .works > .section > .item > .pic > .mask {
