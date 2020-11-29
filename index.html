@@ -1,274 +1,138 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Dylan's Web</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css"
-    />
-    <style>
-      @import url("./css/all.css");
-    </style>
-   
-  </head>
-  <body>
-    <div class="container">
-      <!-- ====== Header ====== -->
-      <div class="header">
-        <div class="menu">
-          <a href="#" id="menu">
-            <i class="fas fa-chevron-down" id="menuShow"></i>
-            <i class="fas fa-chevron-up" id="menuHidden"></i>
-          </a>
+<html lang="zh_TW">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Dylan's Web</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" />
+  <style>
+    @import url("./css/all.css");
+  </style>  
+
+</head>
+
+<body>
+  <div class="container">
+    <!-- ====== Header ====== -->
+    <div class="header">
+      <div class="menu">
+        <a href="#" id="menu">
+          <i class="fas fa-chevron-down" id="menuShow"></i>
+          <i class="fas fa-chevron-up" id="menuHidden"></i>
+        </a>
+      </div>
+      <!-- --- Logo --- -->
+      <div class="logo">
+        <a href="#home" id="logo">
+          Dylan's Web
+        </a>
+      </div>
+      <!-- --- 導覽列 --- -->
+      <nav class="nav" id="nav">
+        <a href="#experience">經歷</a>
+        <a href="#about">關於我</a>
+        <a href="#skills">前端技能</a>
+        <a href="#works">後端技能</a>
+      </nav>
+    </div>
+    <!-- ====== 首頁 ====== -->
+    <div class="home" id="home">
+      <h1><span id="words"></span><span id="cursor">|</span></h1>
+      <a href="#" class="slideBtn" id="slideBtn">
+        <i class="fas fa-long-arrow-alt-down"></i>
+      </a>
+    </div>
+    <!-- ====== 學經歷 ====== -->
+    <div class="experience" id="experience">
+      <h1 id="test">Experience</h1>
+      <div class="section" id="experienceApi"></div>
+    </div>
+    <!-- ====== 關於我 ====== -->
+    <div class="about" id="about">
+      <h1>ABOUT</h1>
+      <div class="section">
+        <!-- --- 左側 --- -->
+        <div class="pic">
+          <img src="./image/mypic.PNG" class="me">
+          <p class="name">Dylan Tsou</p>
+          <div class="icon">
+            <a href="https://www.facebook.com/fu.y.zou" target="_blank">FB</i></a>
+            <a href="https://github.com/dylantsouy?tab=repositories" target="_blank">GH</i></a>
+          </div>
+          <p class="email">
+            <i class="far fa-envelope"></i>bear817005@gmail.com
+          </p>
         </div>
-        <!-- --- Logo --- -->
-        <div class="logo">
-          <a href="#home" id="logo">
-            Dylan's Web
-          </a>
+        <!-- --- 右側 --- -->
+        <div class="txt">
+          <p>高中就讀台南高商觀光科，大學順利進到觀光科第一志願國立高雄餐旅大學，一直以來非常<strong>樂愛學習</strong>，也利用課餘時間<strong>自學非本科系的知識</strong>，除了本科系的證照外，
+            也考取了<strong>會計丙級，證券營業員，救生員</strong>等等跟本科系不相關的證照，踏入社會第一份工作是到<strong>馬尼拉做網頁遊戲的客務服務組長</strong>，在職時間2年半。</p>
+          <p>
+            為什麼會開始對<strong>前端產生興趣</strong>呢，發生在我第一份工作，觀察了一下時間點，2018/7月時，我的經理開始要求我<strong>幫忙測試新產品的功能及界面</strong>，當時開始為了檢查網站頁面的排版有無錯誤，
+            開始接觸了HTML跟CSS，當時決定既然會用到就利用這次機會把它學好當成自己的額外知識， 開始利用下班時間把想學的都看過幾遍，也會看線上課程，甚至到書局看相關書籍，
+            當時學習時間為下班後跟假日，幾乎把所有時間都奉獻給學習了， 到現在想到還是感到熱血沸騰，並不會覺得累，或許是發現了自己的興趣，由於當時上班是週休三天，
+            每周投入程式學習時間大約 30小時 — 40小時甚至更多。</p>
+          <p>很開心我的<strong>第二份工作就是我嚮往的前端工程師</strong>，也很高興同事都很願意與我分享技術一起努力，期間一起開發了許多網頁像是
+            <strong>WebApp，通訊軟體，網站後台，論壇</strong>等等的網站，使自己更加進步</p>
+          <p>雖然會懊惱太晚發現自己的興趣，後悔花了好幾年時間努力讀的科系卻不是自己最喜歡的，但人生不過就是如此，想再多也沒有用，
+            就算結果不是自己喜歡的，過程中也是努力完成自己的要求，<strong>達到自己想要的目標，期間一定會有許多收穫的</strong>，只要努力朝著夢想持續前進， 不輕言放棄，總有一天會踏上自己想要的路的，
+            路是人走出來的，我也還持續為著自己的未來拼命著！</p>
         </div>
-        <!-- --- 導覽列 --- -->
-        <nav class="nav" id="nav">
-          <a href="#experience">經歷</a>
-          <a href="#about">關於我</a>
-          <a href="#skills">前端技能</a>
-          <a href="#works">後端技能</a>
-        </nav>
-      </div>
-      <!-- ====== 首頁 ====== -->
-      <div class="home" id="home">
-          <h1><span id="words"></span><span id="cursor">|</span></h1>
-          <a href="#" class="slideBtn" id="slideBtn">
-            <i class="fas fa-long-arrow-alt-down"></i>
-          </a>
-      </div>
-      <!-- ====== 學經歷 ====== -->
-      <div class="experience" id="experience">
-          <h1 id="test">Experience</h1>
-          <div class="section">
-          <div class="item">
-            <h2>國立高雄餐旅大學</h2>
-            <h3>休閒管理學系<span class="time">2012/9 ~ 2016/6</span></h3>
-          </div>
-          <div class="item">
-            <h2>GLOBAL B2B CONSULTANCY INC.</h2>
-            <h3>客戶服務組長<span class="time">2017/9 ~ 2020/2</span></h3>
-            <ul class="detail">
-              <li>網頁新功能的QA測試</li>
-              <li>負責客服中心人員管理</li>
-              <li>客服績效目標設定</li>
-              <li>管理及督導、修正不當之服務行為或產品資訊，以確保高品質的服務。</li>
-              <li>進行客服人員的培訓、激勵、輔導及管理。</li>
-              <li>協助前線客服人員處理特殊客訴案件。</li>
-            </ul>  
-          </div>
-          <div class="item">
-            <h2>鼎羿科技有限公司</h2>
-            <h3>前端工程師<span class="time">2020/3 ~ 2020/8</span></h3>
-            <ul class="detail">
-              <li>前端團隊開發</li>  
-              <li>開發通訊軟體,網頁APP,網站後台,多語系網頁,網頁論壇</li>
-              <li>多種頁面切版</li>  
-              <li>測試及BUG修復</li>
-              <li>串接Websocket資料</li>
-            </ul>  
-          </div>
-          </div>
-      </div>
-      <!-- ====== 關於我 ====== -->
-      <div class="about" id="about">
-        <h1>ABOUT</h1>
-        <div class="section">
-          <!-- --- 左側 --- -->
-          <div class="pic">
-            <img src="./image/mypic.PNG" class="me">
-            <p class="name">Dylan Tsou</p>
-            <div class="icon">
-              <a href="https://www.facebook.com/fu.y.zou" target="_blank">FB</i></a>
-              <a href="https://github.com/dylantsouy?tab=repositories" target="_blank">GH</i></a>
-            </div>
-            <p class="email">
-              <i class="far fa-envelope"></i>bear817005@gmail.com  
-            </p>
-          </div>
-          <!-- --- 右側 --- -->
-          <div class="txt">
-            <p>高中就讀台南高商觀光科，大學順利進到觀光科第一志願國立高雄餐旅大學，一直以來非常<strong>樂愛學習</strong>，也利用課餘時間<strong>自學非本科系的知識</strong>，除了本科系的證照外，
-              也考取了<strong>會計丙級，證券營業員，救生員</strong>等等跟本科系不相關的證照，踏入社會第一份工作是到<strong>馬尼拉做網頁遊戲的客務服務組長</strong>，在職時間2年半。</p>
-            <p>為什麼會開始對<strong>前端產生興趣</strong>呢，發生在我第一份工作，觀察了一下時間點，2018/7月時，我的經理開始要求我<strong>幫忙測試新產品的功能及界面</strong>，當時開始為了檢查網站頁面的排版有無錯誤，
-              開始接觸了HTML跟CSS，當時決定既然會用到就利用這次機會把它學好當成自己的額外知識， 開始利用下班時間把想學的都看過幾遍，也會看線上課程，甚至到書局看相關書籍，
-              當時學習時間為下班後跟假日，幾乎把所有時間都奉獻給學習了， 到現在想到還是感到熱血沸騰，並不會覺得累，或許是發現了自己的興趣，由於當時上班是週休三天，
-              每周投入程式學習時間大約 30小時 — 40小時甚至更多。</p>
-              <p>很開心我的<strong>第二份工作就是我嚮往的前端工程師</strong>，也很高興同事都很願意與我分享技術一起努力，期間一起開發了許多網頁像是
-                <strong>WebApp，通訊軟體，網站後台，論壇</strong>等等的網站，使自己更加進步</p>
-              <p>雖然會懊惱太晚發現自己的興趣，後悔花了好幾年時間努力讀的科系卻不是自己最喜歡的，但人生不過就是如此，想再多也沒有用，
-                就算結果不是自己喜歡的，過程中也是努力完成自己的要求，<strong>達到自己想要的目標，期間一定會有許多收穫的</strong>，只要努力朝著夢想持續前進， 不輕言放棄，總有一天會踏上自己想要的路的，
-                路是人走出來的，我也還持續為著自己的未來拼命著！</p>
-          </div>
-        </div>
-      </div>
-      <!-- ====== 技能樹 ====== -->
-      <div class="skills" id="skills">
-          <h1>SKILLs</h1>
-          <div class="section">
-            <div class="item">
-              <div class="pic">
-                <img src="./image/html5.png" alt="html5">
-              </div>
-              <div class="txt">
-                <h2>HTML / CSS</h2>
-                <ul>
-                  <li>熟悉Html元素及CSS切版</li>
-                  <li>RWD響應式設計</li>
-                  <li>熟悉WebApp的切版</li>
-                </ul>
-              </div>
-            </div>
-            <div class="item">
-              <div class="pic">
-                <img src="./image/js.png" alt="js">
-              </div>
-              <div class="txt">
-                <h2>JAVASCRIPT</h2>
-                <ul>
-                  <li>使用ES6語法</li>
-                  <li>使用ESLint規則撰寫</li>
-                  <li>熟練與後端API的串接與溝通</li>
-                </ul>
-              </div>
-            </div>
-            <div class="item">
-              <div class="pic">
-                <img src="./image/vue.png" alt="vue">
-              </div>
-              <div class="txt">
-                <h2>VUE.js</h2>
-                <ul>
-                  <li>使用Vue cli開發多項專案</li>
-                  <li>使用Vuex管理資料流</li>
-                </ul>
-              </div>
-            </div>
-            <div class="item">
-              <div class="pic">
-                <img src="./image/nuxt.png" alt="nuxt">
-              </div>
-              <div class="txt">
-                <h2>Nuxt.js</h2>
-                <ul>
-                  <li>使用Nuxt開發專案</li>
-                </ul>
-              </div>
-            </div>
-            <div class="item">
-              <div class="pic">
-                <img src="./image/vant.png" alt="vant">
-              </div>
-              <div class="txt">
-                <h2>Element / Ant Design / Vant / Bootstrap</h2>
-                <ul>
-                  <li>熟悉使用UI開發</li>
-                </ul>
-              </div>
-            </div>
-            <div class="item">
-              <div class="pic">
-                <img src="./image/scss.png" alt="scss">
-              </div>
-              <div class="txt">
-                <h2>SCSS / LESS / SASS</h2>
-                <ul>
-                  <li>根據團隊習慣來使用變數</li>
-                </ul>
-              </div>
-            </div>
-            <div class="item">
-              <div class="pic">
-                <img src="./image/git.png" alt="git">
-              </div>
-              <div class="txt">
-                <h2>GIT / GitLab / GitHub</h2>
-                <ul>
-                  <li>使用Git控管程式碼</li>
-                  <li>熟悉Gitlab Issue的追蹤</li>
-                </ul>
-              </div>
-            </div>
-            <div class="item">
-              <div class="pic">
-                <img src="./image/php.png" alt="git">
-              </div>
-              <div class="txt">
-                <h2>PHP</h2>
-                <ul>
-                  <li>使用PHP操作Mysql的資料</li>
-                  <li>使用SESSION及COOKIE紀錄會員帳號與權限</li>
-                  <li>使用PHP架設用資料庫渲染的網站</li>
-                </ul>
-              </div>
-            </div>
-            <div class="item">
-              <div class="pic">
-                <img src="./image/mysql.png" alt="git">
-              </div>
-              <div class="txt">
-                <h2>Mysql</h2>
-                <ul>
-                  <li>操作SQL敘述句</li>
-                  <li>規劃並維護網站需要呈現的Table</li>
-                  <li>配合使用PHP架設用資料庫渲染的網站</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-      </div>
-      <!-- ====== 作品 ====== -->
-      <div class="works" id="works">
-          <h1>New Projects</h1>
-          <div class="section">
-            <div class="item">
-              <div class="pic">
-                <img src="./image/movie.gif">
-              </div>
-              <div class="txt">
-                <h2>Movie Ranking</h2>
-                <ul>
-                  <li>串接TMDB API</li>
-                  <li>輕鬆查詢目前趨勢電影</li>
-                </ul>
-                <div class="btn">
-                  <a class="demo" href="https://dylanblogz.000webhostapp.com/movie" target="_blank">Demo</a>
-                  <a class="code" href="https://github.com/dylantsouy/Movie-Search" target="_blank">Code</a>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="pic">
-                <img src="./image/gif.gif">
-              </div>
-              <div class="txt">
-                <h2>Gif Search</h2>
-                <ul>
-                  <li>串接GIPHY API</li>
-                  <li>輕鬆查詢目前趨勢Gifs</li>
-                </ul>
-                <div class="btn">
-                  <a class="demo" href="https://dylanblogz.000webhostapp.com/gif-search" target="_blank">Demo</a>
-                  <a class="code" href="https://github.com/dylantsouy/Gif-Search" target="_blank">Code</a>
-                </div>
-              </div>
-            </div>
-          </div>
-      </div>
-      <!-- ====== 頁尾 ====== -->
-      <footer class="footer" id="footer">
-        Copyright &copy; 2020 by Dylan. All rights reserved.
       </div>
     </div>
-    <script src="./typing.js"></script>
-    <script src="./all.js"></script>
-  </body>
+    <!-- ====== 技能樹 ====== -->
+    <div class="skills" id="skills">
+      <h1>SKILLs</h1>
+      <div class="section" id="skillsApi"></div>
+    </div>
+    <!-- ====== 作品 ====== -->
+    <div class="works" id="works">
+      <h1>New Projects</h1>
+      <div class="section">
+        <div class="item">
+          <div class="pic">
+            <img src="./image/movie.gif">
+          </div>
+          <div class="txt">
+            <h2>Movie Ranking</h2>
+            <ul>
+              <li>串接TMDB API</li>
+              <li>輕鬆查詢目前趨勢電影</li>
+            </ul>
+            <div class="btn">
+              <a class="demo" href="https://dylanblogz.000webhostapp.com/movie" target="_blank">Demo</a>
+              <a class="code" href="https://github.com/dylantsouy/Movie-Search" target="_blank">Code</a>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="pic">
+            <img src="./image/gif.gif">
+          </div>
+          <div class="txt">
+            <h2>Gif Search</h2>
+            <ul>
+              <li>串接GIPHY API</li>
+              <li>輕鬆查詢目前趨勢Gifs</li>
+            </ul>
+            <div class="btn">
+              <a class="demo" href="https://dylanblogz.000webhostapp.com/gif-search" target="_blank">Demo</a>
+              <a class="code" href="https://github.com/dylantsouy/Gif-Search" target="_blank">Code</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ====== 頁尾 ====== -->
+    <footer class="footer" id="footer">
+      Copyright &copy; 2020 by Dylan. All rights reserved.
+    </footer>
+  </div>
+  <script src="./jquery.js"></script>
+  <script src="./typing.js"></script>
+  <script src="./all.js"></script>
+</body>
+
 </html>
