@@ -11,8 +11,8 @@
     .querySelector('.section');
   let aboutL = document.querySelector('#about').querySelector('.pic');
   let aboutR = document.querySelector('#about').querySelector('.txt');
-  let worksPic = document.querySelector('#works').querySelectorAll('.pic');
-  let worksTxt = document.querySelector('#works').querySelectorAll('.txt');
+  let worksPic = '';
+  let worksTxt = '';
   let skillsTxt = '';
   const uri = `https://dylansweb.herokuapp.com/api/`;
 
@@ -21,14 +21,14 @@
       return res.json();
     })
     .then((data) => {
-      console.log('我是Experience Api Data ☆',data);
+      console.log('我是Experience Api Data ☆', data);
       data.forEach((e) => {
         let html = `<div class="item"><h2>${e.company}</h2><h3>${e.position}<span class="time">${e.date}</span></h3><ul class="detail">`;
         e.task.forEach((i) => {
           html += `<li>${i}</li>`;
         });
         html += '</ul></div>';
-        $( "#experienceApi" ).append(html);
+        $('#experienceApi').append(html);
       });
     });
   fetch(uri + 'skills', { method: 'GET' })
@@ -36,11 +36,11 @@
       return res.json();
     })
     .then((data) => {
-      console.log('我是Skills Api Data ☆',data);
+      console.log('我是Skills Api Data ☆', data);
       data.forEach((e) => {
         let html = `<div class="item"><div class="pic"><img src="./image/${e.imgurl}" alt="${e.key}"></div>`;
-        html += `<div class="txt"><h2>${e.key}</h2><h5>${e.name}</h5></div></div>`
-        $( "#skillsApi" ).append(html);
+        html += `<div class="txt"><h2>${e.key}</h2><h5>${e.name}</h5></div></div>`;
+        $('#skillsApi').append(html);
         skillsTxt = document.querySelector('#skills').querySelectorAll('.txt');
       });
     });
@@ -49,7 +49,22 @@
       return res.json();
     })
     .then((data) => {
-      console.log(data);
+      console.log('我是Projects Api Data ☆', data);
+      data.forEach((e) => {
+        let html = `<div class="item"><div class="pic"><img src="./image/${e.imgUrl}" alt="${e.key}"></div>`;
+        html += `<div class="txt"><h2>${e.name}</h2>
+        <ul>
+          <li>${e.describe}</li>
+          <li>${e.purpose}</li>
+        </ul>
+        <div class="btn">
+          <a class="demo" href="${e.demoUrl}" target="_blank">Demo</a>
+          <a class="code" href="${e.codeUrl}" target="_blank">Code</a>
+        </div></div></div>`;
+        $('#projectsApi').append(html);
+        worksPic = document.querySelector('#works').querySelectorAll('.pic');
+        worksTxt = document.querySelector('#works').querySelectorAll('.txt');
+      });
     });
   // --- 展開菜單欄 ---
   menuShow.addEventListener('click', (evt) => {
@@ -139,38 +154,42 @@
       navlink[1].classList.remove('activeNav');
     }
     // --- 技能樹是否顯示 ---
-    if (top1 + h / 2 > top4 && top1 + h / 2 < top5) {
-      skillsTxt.forEach((el) => {
-        el.classList.add('active');
-      });
-      h1[3].classList.add('active');
-      navlink[2].classList.add('activeNav');
-    } else {
-      skillsTxt.forEach((el) => {
-        el.classList.remove('active');
-      });
-      h1[3].classList.remove('active');
-      navlink[2].classList.remove('activeNav');
+    if (skillsTxt) {
+      if (top1 + h / 2 > top4 && top1 + h / 2 < top5) {
+        skillsTxt.forEach((el) => {
+          el.classList.add('active');
+        });
+        h1[3].classList.add('active');
+        navlink[2].classList.add('activeNav');
+      } else {
+        skillsTxt.forEach((el) => {
+          el.classList.remove('active');
+        });
+        h1[3].classList.remove('active');
+        navlink[2].classList.remove('activeNav');
+      }
     }
     // --- 作品是否顯示 ---
-    if (top1 + h / 2 > top5) {
-      worksPic.forEach((el) => {
-        el.classList.add('active');
-      });
-      worksTxt.forEach((el) => {
-        el.classList.add('active');
-      });
-      h1[4].classList.add('active');
-      navlink[3].classList.add('activeNav');
-    } else {
-      worksPic.forEach((el) => {
-        el.classList.remove('active');
-      });
-      worksTxt.forEach((el) => {
-        el.classList.remove('active');
-      });
-      h1[4].classList.remove('active');
-      navlink[3].classList.remove('activeNav');
+    if (worksPic) {
+      if (top1 + h / 2 > top5) {
+        worksPic.forEach((el) => {
+          el.classList.add('active');
+        });
+        worksTxt.forEach((el) => {
+          el.classList.add('active');
+        });
+        h1[4].classList.add('active');
+        navlink[3].classList.add('activeNav');
+      } else {
+        worksPic.forEach((el) => {
+          el.classList.remove('active');
+        });
+        worksTxt.forEach((el) => {
+          el.classList.remove('active');
+        });
+        h1[4].classList.remove('active');
+        navlink[3].classList.remove('activeNav');
+      }
     }
   });
 
