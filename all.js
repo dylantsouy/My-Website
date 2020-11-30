@@ -16,6 +16,18 @@
   let skillsTxt = '';
   const uri = `https://dylansweb.herokuapp.com/api/`;
 
+  // 轉 Base64
+  function arrayBufferToBase64(buffer) {
+    let binary = '';
+    let bytes = new Uint8Array(buffer.data);
+    let len = bytes.byteLength;
+    for (let z = 0; z < len; z++) {
+      binary += String.fromCharCode(bytes[z]);
+    }
+    return window.btoa(binary);
+  };
+
+  // experiences api
   fetch(uri + 'experiences', { method: 'GET' })
     .then((res) => {
       return res.json();
@@ -31,6 +43,8 @@
         $('#experienceApi').append(html);
       });
     });
+
+  // skills api
   fetch(uri + 'skills', { method: 'GET' })
     .then((res) => {
       return res.json();
@@ -38,12 +52,14 @@
     .then((data) => {
       console.log('我是Skills Api Data ☆', data);
       data.forEach((e) => {
-        let html = `<div class="item"><div class="pic"><img src="data:image/gif;base64,${e.imgUrl}" alt="${e.key}"></div>`;
+        let html = `<div class="item"><div class="pic"><img src="data:image/png;base64,${arrayBufferToBase64(e.imgUrl)}" alt="${e.key}"></div>`;
         html += `<div class="txt"><h2>${e.key}</h2><h5>${e.name}</h5></div></div>`;
         $('#skillsApi').append(html);
         skillsTxt = document.querySelector('#skills').querySelectorAll('.txt');
       });
     });
+
+  // projects api
   fetch(uri + 'projects', { method: 'GET' })
     .then((res) => {
       return res.json();
