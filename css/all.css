@@ -1006,14 +1006,6 @@ a {
   }
 }
 
-@media screen and (min-width: 1200px) {
-  .container>.works>.section {
-    -webkit-box-pack: start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
-  }
-}
-
 @media screen and (max-width: 960px) {
   .container {
     font-family: Microsoft JhengHei;

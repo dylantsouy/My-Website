@@ -6,9 +6,7 @@ let menuHidden = document.querySelector('#menuHidden');
 let navlink = nav.querySelectorAll('a');
 let slideBtn = document.querySelector('#slideBtn');
 let h1 = document.querySelectorAll('h1');
-let experience = document
-  .querySelector('#experience')
-  .querySelector('.section');
+let experience = document.querySelector('#experience').querySelector('.section');
 let aboutL = document.querySelector('#about').querySelector('.pic');
 let aboutR = document.querySelector('#about').querySelector('.txt');
 let worksPic = '';
