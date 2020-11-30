@@ -28,47 +28,57 @@
   };
 
   // experiences api
-  fetch(uri + 'experiences', { method: 'GET' })
-    .then((res) => {
-      return res.json();
-    })
-    .then((data) => {
-      console.log('我是Experience Api Data ☆', data);
-      data.forEach((e) => {
-        let html = `<div class="item"><h2>${e.company}</h2><h3>${e.position}<span class="time">${e.date}</span></h3><ul class="detail">`;
-        e.task.forEach((i) => {
-          html += `<li>${i}</li>`;
+  function getExperiences() {
+    return new Promise(function (resolve, reject) {
+      fetch(uri + 'experiences', { method: 'GET' })
+        .then((res) => {
+          return res.json();
+        })
+        .then((data) => {
+          console.log('我是Experience Api Data ☆', data);
+          data.forEach((e) => {
+            let html = `<div class="item"><h2>${e.company}</h2><h3>${e.position}<span class="time">${e.date}</span></h3><ul class="detail">`;
+            e.task.forEach((i) => {
+              html += `<li>${i}</li>`;
+            });
+            html += '</ul></div>';
+            $('#experienceApi').append(html);
+          });
+          resolve();
         });
-        html += '</ul></div>';
-        $('#experienceApi').append(html);
-      });
-    });
-
+    })
+  }
   // skills api
-  fetch(uri + 'skills', { method: 'GET' })
-    .then((res) => {
-      return res.json();
-    })
-    .then((data) => {
-      console.log('我是Skills Api Data ☆', data);
-      data.forEach((e) => {
-        let html = `<div class="item"><div class="pic"><img src="data:image/png;base64,${arrayBufferToBase64(e.imgUrl)}" alt="${e.key}"></div>`;
-        html += `<div class="txt"><h2>${e.key}</h2><h5>${e.name}</h5></div></div>`;
-        $('#skillsApi').append(html);
-        skillsTxt = document.querySelector('#skills').querySelectorAll('.txt');
-      });
+  function getSkills() {
+    return new Promise(function (resolve, reject) {
+      fetch(uri + 'skills', { method: 'GET' })
+        .then((res) => {
+          return res.json();
+        })
+        .then((data) => {
+          console.log('我是Skills Api Data ☆', data);
+          data.forEach((e) => {
+            let html = `<div class="item"><div class="pic"><img src="data:image/png;base64,${arrayBufferToBase64(e.imgUrl)}" alt="${e.key}"></div>`;
+            html += `<div class="txt"><h2>${e.key}</h2><h5>${e.name}</h5></div></div>`;
+            $('#skillsApi').append(html);
+            skillsTxt = document.querySelector('#skills').querySelectorAll('.txt');
+          });
+          resolve();
+        });
     });
-
+  }
   // projects api
-  fetch(uri + 'projects', { method: 'GET' })
-    .then((res) => {
-      return res.json();
-    })
-    .then((data) => {
-      console.log('我是Projects Api Data ☆', data);
-      data.forEach((e) => {
-        let html = `<div class="item"><div class="pic"><img src="./image/${e.imgUrl}" alt="${e.key}"></div>`;
-        html += `<div class="txt"><h2>${e.name}</h2>
+  function getProjects() {
+    return new Promise(function (resolve, reject) {
+      fetch(uri + 'projects', { method: 'GET' })
+        .then((res) => {
+          return res.json();
+        })
+        .then((data) => {
+          console.log('我是Projects Api Data ☆', data);
+          data.forEach((e) => {
+            let html = `<div class="item"><div class="pic"><img src="./image/${e.imgUrl}" alt="${e.key}"></div>`;
+            html += `<div class="txt"><h2>${e.name}</h2>
         <ul>
           <li>${e.describe}</li>
           <li>${e.purpose}</li>
@@ -77,11 +87,32 @@
           <a class="demo" href="${e.demoUrl}" target="_blank">Demo</a>
           <a class="code" href="${e.codeUrl}" target="_blank">Code</a>
         </div></div></div>`;
-        $('#projectsApi').append(html);
-        worksPic = document.querySelector('#works').querySelectorAll('.pic');
-        worksTxt = document.querySelector('#works').querySelectorAll('.txt');
-      });
+            $('#projectsApi').append(html);
+            worksPic = document.querySelector('#works').querySelectorAll('.pic');
+            worksTxt = document.querySelector('#works').querySelectorAll('.txt');
+          });
+          resolve();
+        });
     });
+  }
+  // call all api
+  function getApi() {
+    return new Promise(function (resolve, reject) {
+      getExperiences().then(() => {
+        getSkills().then(() => {
+          getProjects().then(() => {
+            resolve();
+          })
+        })
+      })
+    });
+  }
+
+  getApi().finally(function () {
+    // api接受完 關閉讀取
+    $('.index-loading').addClass('loading-finished')
+    $('.loading').css("display", "none");
+  })
   // --- 展開菜單欄 ---
   menuShow.addEventListener('click', (evt) => {
     //   nav.style.setProperty("display", "flex");
