@@ -38,7 +38,7 @@
     .then((data) => {
       console.log('我是Skills Api Data ☆', data);
       data.forEach((e) => {
-        let html = `<div class="item"><div class="pic"><img src="./image/${e.imgurl}" alt="${e.key}"></div>`;
+        let html = `<div class="item"><div class="pic"><img src="data:image/gif;base64,${e.imgUrl}" alt="${e.key}"></div>`;
         html += `<div class="txt"><h2>${e.key}</h2><h5>${e.name}</h5></div></div>`;
         $('#skillsApi').append(html);
         skillsTxt = document.querySelector('#skills').querySelectorAll('.txt');
