@@ -85,8 +85,7 @@
   });
   // --- 點擊菜單欄連結 ---
   navlink.forEach((element) => {
-    element.addEventListener('click', (evt) => {
-      evt.preventDefault();
+    element.addEventListener('click', () => {
       nav.style.setProperty('visibility', 'hidden');
       nav.style.setProperty('max-height', '0px');
       menuShow.style.setProperty('display', 'block');
