@@ -14,6 +14,12 @@ let worksTxt = '';
 let skillsTxt = '';
 const uri = 'https://dylansweb.herokuapp.com/api/';
 
+// for ie foreach
+if (typeof NodeList.prototype.forEach !== 'function') {
+  NodeList.prototype.forEach = Array.prototype.forEach;
+}
+
+// get xhr
 function get(url) {
   return new Promise(function (resolve, reject) {
     // 定義 Http request
@@ -31,6 +37,7 @@ function get(url) {
     req.send();
   });
 }
+
 // 轉 Base64
 function arrayBufferToBase64(buffer) {
   let binary = '';
@@ -60,6 +67,7 @@ function getExperiences() {
       });
   })
 }
+
 // skills api
 function getSkills() {
   return new Promise(function (resolve, reject) {
@@ -75,6 +83,7 @@ function getSkills() {
       });
   });
 }
+
 // projects api
 function getProjects() {
   return new Promise(function (resolve, reject) {
@@ -91,27 +100,22 @@ function getProjects() {
       });
   });
 }
+
 // call all api
-function getApi() {
-  return new Promise(function (resolve, reject) {
-    getExperiences().then(function () {
-      getSkills().then(function () {
-        getProjects().then(function () {
-          resolve();
-        })
+(function () {
+  getExperiences().then(function () {
+    getSkills().then(function () {
+      getProjects().then(function () {
+        $('.index-loading').addClass('loading-finished')
+        $('.loading').css("display", "none");
+        skillsTxt = document.querySelector('#skills').querySelectorAll('.txt');
+        worksPic = document.querySelector('#works').querySelectorAll('.pic');
+        worksTxt = document.querySelector('#works').querySelectorAll('.txt');
       })
     })
-  });
-}
+  })
+})()
 
-getApi().finally(function () {
-  // api接受完 關閉讀取
-  $('.index-loading').addClass('loading-finished')
-  $('.loading').css("display", "none");
-  skillsTxt = document.querySelector('#skills').querySelectorAll('.txt');
-  worksPic = document.querySelector('#works').querySelectorAll('.pic');
-  worksTxt = document.querySelector('#works').querySelectorAll('.txt');
-})
 // --- 展開菜單欄 ---
 menuShow.addEventListener('click', function (evt) {
   //   nav.style.setProperty("display", "flex");
