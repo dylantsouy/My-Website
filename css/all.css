@@ -529,7 +529,11 @@ a {
   transition: 1s;
   max-width: 600px;
 }
-
+.container>.about>.section>.txt>h3 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 2;
+}
 .container>.about>.section>.txt>p {
   text-indent: 2em;
   margin: 0 0 16px;
