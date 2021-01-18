@@ -822,8 +822,11 @@ a {
 }
 
 /* --- 遮罩層 --- */
+.container>.works>.section>.item>.pic{
+  background-color:rgba(0, 0, 0, 0.1) ;
+}
 
-.container>.works>.section>.item>.pic>.mask {
+.container>.works>.section>.item>.pic>.mask { 
   width: 100%;
   height: 100%;
   position: absolute;
