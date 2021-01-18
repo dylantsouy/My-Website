@@ -93,8 +93,9 @@ function getProjects() {
         data.forEach(function (e) {
           let html = '<div class="item"><div class="pic"><img src="./image/' + e.imgUrl + '" alt="' + e.key + '"></div>';
           html += '<div class="txt"><h2>' + e.name + '</h2><ul><li>' + e.describe + '</li><li>' + e.purpose + '</li></ul><div class="btn">';
-          html += '<a class="demo" href="' + e.demoUrl + '" target="_blank">Demo</a><a class="code" href="' + e.codeUrl + '" target="_blank">Code</a>';
-          html += e.backUrl ? '<a class="back" href="' + e.backUrl + '" target="_blank">API</a>' : '';
+          html +=  e.demoUrl ? '<a class="demo" href="' + e.demoUrl + '" target="_blank">Demo</a>' : '';
+          html +=  e.codeUrl ?'<a class="code" href="' + e.codeUrl + '" target="_blank">Code</a>' : '';
+          html +=  e.backUrl ? '<a class="back" href="' + e.backUrl + '" target="_blank">API</a>' : '';
           html += '</div></div></div>';
           $('#projectsApi').append(html);
         });
